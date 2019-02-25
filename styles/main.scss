@@ -1,3 +1,25 @@
-.customClassFromFile {
-    color: blue;
+@import './shared/fonts';
+
+//PAGES
+
+@import'./_index';
+
+//COMPONENTS
+@import './_header';
+
+html, body {
+    font-family: 'TrilliumWeb', 'Helvetica';
+    height:100%;
+    width:100%;
 }
+  
+.self-typed {
+    font-size: 31px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.absolute {
+    position: absolute !important;
+  }
