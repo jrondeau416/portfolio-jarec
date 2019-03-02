@@ -3,6 +3,7 @@ import Header from '../components/shared/Header';
 import BaseLayout from '../components/layouts/BaseLayout';
 import axios from 'axios';
 import { Link } from '../routes';
+import BasePage from '../components/BasePage';
 
 export default class portfolio extends React.Component {
 
@@ -35,6 +36,7 @@ export default class portfolio extends React.Component {
     const { posts } = this.props;
     return (
         <BaseLayout>
+          <BasePage>
             <h1>
                 I am the Portfolio page from class based component
             </h1>
@@ -43,6 +45,7 @@ export default class portfolio extends React.Component {
                 this.renderPosts(posts)
               }
             </ul>
+          </BasePage>  
         </BaseLayout>
       
     )

@@ -44,6 +44,7 @@ import {
   NavItem,
   NavLink} from 'reactstrap';
 import Link from 'next/link';
+import auth0 from '../../services/auth0';
 
 
   const BsNavLink = (props) => {
@@ -54,6 +55,18 @@ import Link from 'next/link';
         </Link>
 
       )
+  }
+
+  const Login = () => {
+    return (
+      <span onClick={auth0.login} className="nav-link port-navbar-link clickable">Login</span>
+    )
+  }
+
+  const Logout = () => {
+    return (
+      <span className="nav-link port-navbar-link clickable">Logout</span>
+    )
   }
 
 export default class Example extends React.Component {
@@ -92,6 +105,12 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem className="port-navbar-item">
                 <BsNavLink className="port-navbar-link" route="/cv" title="CV" />   
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <Login />   
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <Logout />   
               </NavItem>
             </Nav>
           </Collapse>

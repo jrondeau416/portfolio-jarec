@@ -3,6 +3,7 @@ import Header from '../components/shared/Header';
 import BaseLayout from '../components/layouts/BaseLayout';
 import { withRouter } from 'next/router';
 import axios from 'axios';
+import BasePage from '../components/BasePage';
 
 
 class PortfolioDetail extends React.Component {
@@ -26,16 +27,17 @@ class PortfolioDetail extends React.Component {
 
     return (
         <BaseLayout>
-            <h1>
-                {portfolioData.title}
-            </h1>
-            <p>
-                Body: {portfolioData.body}
-            </p>
-            <p>
-                Id: {portfolioData.id}
-            </p>
-            
+            <BasePage>
+                <h1>
+                    {portfolioData.title}
+                </h1>
+                <p>
+                    Body: {portfolioData.body}
+                </p>
+                <p>
+                    Id: {portfolioData.id}
+                </p>
+            </BasePage>
         </BaseLayout>
     )
   }
