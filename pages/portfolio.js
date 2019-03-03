@@ -35,7 +35,7 @@ export default class portfolio extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-        <BaseLayout>
+        <BaseLayout {...this.props.auth}>
           <BasePage>
             <h1>
                 I am the Portfolio page from class based component

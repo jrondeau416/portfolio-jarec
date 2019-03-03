@@ -6,7 +6,7 @@ import BasePage from '../components/BasePage';
 export default class Blog extends React.Component {
   render() {
     return (
-        <BaseLayout>
+        <BaseLayout {...this.props.auth}>
           <BasePage>
             <h1>
                 I am the Blog page from class absed component

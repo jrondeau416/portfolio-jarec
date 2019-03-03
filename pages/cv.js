@@ -6,7 +6,7 @@ import BasePage from '../components/BasePage';
 export default class CV extends React.Component {
   render() {
     return (
-        <BaseLayout>
+        <BaseLayout {...this.props.auth}>
           <BasePage>
             <h1>
                 I am the CV page from class based Component

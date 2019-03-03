@@ -48,6 +48,8 @@ export default class Example extends React.Component {
     });
   }
   render() {
+
+    const { isAuthenticated, user } = this.props;
     return (
       <div>
         <Navbar className="port-navbar port-default absolute" color="transparent" light expand="md">
@@ -70,14 +72,19 @@ export default class Example extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink className="port-navbar-link" route="/cv" title="CV" />   
               </NavItem>
-              { !auth0.isAuthenticated() &&
+              { !isAuthenticated &&
                 <NavItem className="port-navbar-item">
                   <Login />   
                 </NavItem>
               }
-              { auth0.isAuthenticated() &&
+              { isAuthenticated &&
                 <NavItem className="port-navbar-item">
                   <Logout />   
+                </NavItem>
+              }
+              { isAuthenticated &&
+                <NavItem className="port-navbar-item">
+                  <span className="nav-link port-navbar-link"> {user.name} </span>   
                 </NavItem>
               }
             </Nav>

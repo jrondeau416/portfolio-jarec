@@ -26,7 +26,7 @@ class PortfolioDetail extends React.Component {
       const { portfolioData } = this.props;
 
     return (
-        <BaseLayout>
+        <BaseLayout {...this.props.auth}>
             <BasePage>
                 <h1>
                     {portfolioData.title}
