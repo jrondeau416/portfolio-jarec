@@ -3,7 +3,7 @@ import Header from '../components/shared/Header';
 import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
 
-export default class blog extends React.Component {
+export default class Blog extends React.Component {
   render() {
     return (
         <BaseLayout>

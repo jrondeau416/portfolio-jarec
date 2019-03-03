@@ -1,39 +1,3 @@
-// import React from 'react';
-// import Link from 'next/link';
-
-// class Header extends React.Component {
-//     render() {
-//         return (
-//             <React.Fragment>
-
-
-
-
-
-
-
-
-
-//                 <style jsx>
-//                     {
-//                         `
-//                             a {
-//                                 font-size: 20px;
-//                             }
-//                             .customClass {
-//                                 color: red;
-//                             }
-//                         `
-//                     }
-//                 </style>
-//             </React.Fragment>
-//         );
-//     }
-// }
-
-// export default Header;
-
-
 import React from 'react';
 import {
   Collapse,
@@ -65,7 +29,7 @@ import auth0 from '../../services/auth0';
 
   const Logout = () => {
     return (
-      <span className="nav-link port-navbar-link clickable">Logout</span>
+      <span onClick={auth0.logout} className="nav-link port-navbar-link clickable">Logout</span>
     )
   }
 
@@ -106,12 +70,16 @@ export default class Example extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink className="port-navbar-link" route="/cv" title="CV" />   
               </NavItem>
-              <NavItem className="port-navbar-item">
-                <Login />   
-              </NavItem>
-              <NavItem className="port-navbar-item">
-                <Logout />   
-              </NavItem>
+              { !auth0.isAuthenticated() &&
+                <NavItem className="port-navbar-item">
+                  <Login />   
+                </NavItem>
+              }
+              { auth0.isAuthenticated() &&
+                <NavItem className="port-navbar-item">
+                  <Logout />   
+                </NavItem>
+              }
             </Nav>
           </Collapse>
         </Navbar>
